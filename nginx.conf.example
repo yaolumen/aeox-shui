@@ -1,0 +1,81 @@
+# ========================================
+# Quantum Fate Lite · Nginx Reverse Proxy
+# ========================================
+# Hostinger VPS setup:
+#   1. Copy to /etc/nginx/sites-available/quantum-fate-lite
+#   2. ln -s /etc/nginx/sites-available/quantum-fate-lite /etc/nginx/sites-enabled/
+#   3. Replace <your-domain> with your actual domain
+#   4. nginx -t && systemctl reload nginx
+#   5. certbot --nginx -d <your-domain>   (free SSL via Let's Encrypt)
+#
+# This assumes the app runs on port 3000 via PM2 (ecosystem.config.cjs)
+# ========================================
+
+server {
+    listen 80;
+    server_name <your-domain> www.<your-domain>;
+
+    # Redirect HTTP → HTTPS (after certbot runs, this becomes automatic)
+    # Uncomment after certbot setup:
+    # return 301 https://$host$request_uri;
+
+    location / {
+        proxy_pass http://127.0.0.1:3000;
+        proxy_http_version 1.1;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+
+        # SSE / long-poll for AI streaming (if used)
+        proxy_buffering off;
+        proxy_cache off;
+        proxy_read_timeout 300s;
+    }
+
+    # Cache static assets
+    location /_next/static {
+        proxy_pass http://127.0.0.1:3000;
+        expires 365d;
+        add_header Cache-Control "public, immutable";
+    }
+
+    # Block dotfiles / sensitive paths
+    location ~ /\.(?!well-known) {
+        deny all;
+    }
+}
+
+# HTTPS server (uncomment after certbot --nginx)
+# server {
+#     listen 443 ssl http2;
+#     server_name <your-domain> www.<your-domain>;
+#
+#     ssl_certificate     /etc/letsencrypt/live/<your-domain>/fullchain.pem;
+#     ssl_certificate_key /etc/letsencrypt/live/<your-domain>/privkey.pem;
+#     ssl_protocols       TLSv1.2 TLSv1.3;
+#     ssl_ciphers         HIGH:!aNULL:!MD5;
+#     ssl_prefer_server_ciphers on;
+#
+#     location / {
+#         proxy_pass http://127.0.0.1:3000;
+#         proxy_http_version 1.1;
+#         proxy_set_header Host $host;
+#         proxy_set_header X-Real-IP $remote_addr;
+#         proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+#         proxy_set_header X-Forwarded-Proto $scheme;
+#         proxy_buffering off;
+#         proxy_cache off;
+#         proxy_read_timeout 300s;
+#     }
+#
+#     location /_next/static {
+#         proxy_pass http://127.0.0.1:3000;
+#         expires 365d;
+#         add_header Cache-Control "public, immutable";
+#     }
+#
+#     location ~ /\.(?!well-known) {
+#         deny all;
+#     }
+# }

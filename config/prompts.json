@@ -1,0 +1,68 @@
+{
+  "$schema": "./schema/prompts.schema.json",
+  "version": "0.10.0",
+  "global": {
+    "systemPrompt": {
+      "zh-CN": "你是一位传统节律文化研究者，熟悉中国传统五行与时令哲学的文化背景与解读视角。请以启发性、参考性的口吻，从传统文化角度为用户解读时间能量图谱。\n\n【重要原则】\n1. 所有解读为**参考性视角**，不是预测或断言。\n2. 避免绝对化表达（不要说「一定会」「必定」「肯定」）。\n3. 使用「传统认为」「从节律视角看」「可作为参考」等措辞。\n4. 不提供医疗、投资、婚恋、法律等任何领域的具体决策建议。\n5. 强调用户的主动性与自我抉择——节律是文化参考，不是宿命论。\n6. 保持专业、温和、易懂的语言风格。\n7. 将传统术语转化为现代概念：命理→节律，运势→能量周期，风水→空间调和，吉凶→高能/低能期。\n8. 报告中的术语请保持与输入数据中的双语标注一致（如「木 (Wood)」「甲 (Jia)」），不要只使用单语。",
+      "en": "You are an environmental rhythm analyst specializing in classical Asian temporal energy systems (based on classical texts like San Ming Tong Hui and Zi Ping Zhen Quan). You translate traditional Five Element (Wood/Fire/Earth/Metal/Water) balance patterns into modern energy cycle insights — chronobiological rhythms, seasonal resonance, and spatial harmony recommendations.\n\n[Important Principles]\n1. All interpretations are **reference perspectives**, NOT predictions or assertions.\n2. Avoid absolute language ('will definitely', 'certainly', 'guaranteed').\n3. Use phrases like 'traditionally considered', 'from an energy rhythm perspective', 'as a reference point'.\n4. Do NOT provide specific decision-making advice in medical, investment, marital, legal, or any other domain.\n5. Emphasize user agency and self-determination — these are environmental patterns, not fatalistic outcomes.\n6. Maintain a professional, warm, and accessible tone.\n7. Use modern terminology: replace 'fortune/fate' with 'energy cycle', 'auspicious/inauspicious' with 'high-energy/low-energy phase', 'feng shui' with 'spatial harmony design'.\n8. Always include a 'Spatial Actionable Advice' section with concrete color, material, and placement suggestions.\n9. Preserve the bilingual annotations in the input data (e.g. 'Wood (木)', 'Jia (甲)') when referencing terms — do not drop either language."
+    },
+    "tone": "reference",
+    "style": "modern-energy",
+    "outputFormat": "markdown"
+  },
+  "templates": {
+    "foundation": {
+      "name": {
+        "zh-CN": "基础节律参考",
+        "en": "Foundation Energy Profile"
+      },
+      "enabled": true,
+      "description": {
+        "zh-CN": "个人能量周期的基础参考解读，适合初次体验",
+        "en": "Foundational personal energy cycle analysis, ideal for first-time exploration"
+      },
+      "prompt": {
+        "zh-CN": "请根据以下时间能量信息，从传统节律文化视角生成一份**基础参考解读**。\n\n**用户时间能量信息：**\n- 出生时间：{birthDate} {birthTime}\n- 性别：{gender}\n- 时间能量向量（年柱 · 月柱 · 日柱 · 时柱）：{bazi}\n- 日主：{dayMaster}\n- 日主旺衰：{strength}\n- 五行平衡：{wuxing}\n- 能量催化剂（喜用）：{favorable}\n- 需关注元素（忌）：{unfavorable}\n- 流年周期：{liunian}\n- 参考典籍：{fateBook}\n\n**解读结构（仅供参考，不构成决策建议）：**\n1. **能量图谱概述**（约 100 字）—— 从节律角度简述五行构成。重要：引用四柱时必须明确标注「年柱/月柱/日柱/时柱」，不要混淆日柱和时柱。\n2. **五行平衡视角**—— 列出五行强弱，提示可关注的元素\n3. **行为倾向参考**（3-5 点）—— 节律视角下的行为模式倾向\n4. **生活节律参考**（2-3 条）—— 启发性的节律调整方向\n5. **流年能量参考**—— 简要分析周期内每一年的能量主题，基于流年柱与原局的交互关系\n6. **空间行动建议**—— 具体的色彩、材质与空间布局建议\n\n**字数要求：**\n- 全文控制在 **600-800 字** 之间\n- 每个章节简明扼要，不要展开过长\n- 必须完成全部 6 个章节，不要在中途截断\n- 最后一个章节写完后自然结束，不要添加多余内容\n\n**重要提醒：**\n- 使用「参考」「视角」「传统认为」等措辞\n- 避免绝对预测、断言具体事件\n- 强调用户主动性与自我抉择\n- 报告中的术语请保持双语标注风格（如「木 (Wood)」「甲 (Jia)」），始终同时包含两种语言",
+        "en": "Please generate a **Foundation Energy Profile** from a classical environmental rhythm perspective based on the following temporal energy information.\n\n**User Temporal Energy Info:**\n- Birth Timestamp: {birthDate} {birthTime}\n- Gender: {gender}\n- Temporal Energy Vector (Year · Month · Day · Hour): {bazi}\n- Day Master: {dayMaster}\n- Day Master Strength: {strength}\n- Elemental Balance: {wuxing}\n- Energy Catalysts (Favorable): {favorable}\n- Elements to Observe (Unfavorable): {unfavorable}\n- Temporal Cycle (Liunian): {liunian}\n- Reference Classic: {fateBook}\n\n**Profile Structure (reference only, not advice):**\n1. **Energy Overview** (~100 words) — Overview of your elemental composition and temporal energy pattern. IMPORTANT: When referencing pillars, always use the format \"Year [X] / Month [X] / Day [X] / Hour [X]\" — do NOT mix Day and Hour pillar components.\n2. **Elemental Balance Spectrum** — Element strengths with elements to note; identify your dominant and deficient elements\n3. **Behavioral Tendency Patterns** (3-5 points) — How your energy profile influences typical behavioral patterns\n4. **Life Rhythm & Seasonal Strategy** (2-3 items) — Heuristic directions for aligning your activities with your energy cycles\n5. **Temporal Cycle Energy Reference** — For each year in the cycle, briefly note the key energy theme based on the Liunian pillar and its interactions with the natal chart\n6. **Spatial Actionable Advice** — Concrete recommendations for color palette, materials, and room orientation to harmonize your living space\n\n**Word Count Requirements:**\n- Keep the entire profile between **500-700 words**\n- Each section should be concise and focused — do NOT expand any single section beyond 150 words\n- You MUST complete ALL 6 sections — do NOT truncate or cut short\n- End naturally after the final section with no extra content\n\n**Important Reminders:**\n- Use phrases like 'from an energy perspective', 'traditionally considered', 'as a reference point'\n- Avoid absolute predictions or specific event assertions\n- Emphasize user agency — these are environmental patterns, not fixed outcomes\n- Preserve the bilingual term annotations from the input data (e.g. 'Wood (木)', 'Jia (甲)') — always include both languages when referencing any term"
+      },
+      "maxTokens": 2048,
+      "temperature": 0.7,
+      "sections": [
+        "overview",
+        "wuxing",
+        "personality",
+        "advice",
+        "spatial"
+      ]
+    },
+    "premium": {
+      "name": {
+        "zh-CN": "深度节律参考",
+        "en": "In-Depth Energy Profile"
+      },
+      "enabled": true,
+      "description": {
+        "zh-CN": "深度能量周期解读，涵盖更多节律视角与详细空间策略",
+        "en": "In-depth energy cycle analysis with broader perspectives and detailed spatial strategies"
+      },
+      "prompt": {
+        "zh-CN": "请根据以下时间能量信息，从传统节律文化视角生成一份**深度参考解读**。\n\n**用户时间能量信息：**\n- 出生时间：{birthDate} {birthTime}\n- 性别：{gender}\n- 时间能量向量（年柱 · 月柱 · 日柱 · 时柱）：{bazi}\n- 日主：{dayMaster}\n- 日主旺衰：{strength}\n- 五行平衡：{wuxing}\n- 能量催化剂（喜用）：{favorable}\n- 需关注元素（忌）：{unfavorable}\n- 流年周期：{liunian}\n- 参考典籍：{fateBook}\n\n**解读结构（仅供参考，不构成决策建议）：**\n1. **能量图谱概述**（约 150 字）—— 详细阐述五行构成与能量格局。重要：引用四柱时必须明确标注「年柱/月柱/日柱/时柱」，不要混淆日柱和时柱。\n2. **五行深度分析**—— 详列五行强弱、缺失、能量催化剂、需关注元素\n3. **能量关系参考**—— 梳理元素配置，解读其对行为、事业、关系的影响\n4. **行为倾向与潜能参考**（5-7 点）—— 节律视角下的行为模式与潜在特质\n5. **事业与学业参考**（2-3 条）—— 传统节律视角下的方向参考\n6. **人际与情感参考**（2-3 条）—— 启发性的关系思考方向\n7. **健康与生活节律参考**（1-2 条）—— 五行平衡角度的生活调和建议\n8. **流年能量参考**—— 分析周期内每一年的流年柱、五行属性，及其与原局四柱的关键交互（冲/合/生/克），提供每年的能量主题与行动指引—— 当年流年的节律视角解读\n9. **综合策略**—— 扬长避短的启发性思考\n10. **空间行动建议**—— 具体的色彩、材质、方位与空间布局建议（至少 3 条具体建议）\n\n**字数要求：**\n- 全文控制在 **1200-1600 字** 之间\n- 每个章节适度展开，但不要冗长\n- 必须完成全部 10 个章节，不要在中途截断\n- 最后一个章节写完后自然结束，不要添加多余内容\n\n**重要提醒：**\n- 使用「参考」「视角」「传统认为」等措辞\n- 避免绝对预测、断言具体事件\n- 强调用户主动性与自我抉择\n- 报告中的术语请保持双语标注风格（如「木 (Wood)」「甲 (Jia)」），始终同时包含两种语言",
+        "en": "Please generate an **In-Depth Energy Profile** from a classical environmental rhythm perspective based on the following temporal energy information.\n\n**User Temporal Energy Info:**\n- Birth Timestamp: {birthDate} {birthTime}\n- Gender: {gender}\n- Temporal Energy Vector (Year · Month · Day · Hour): {bazi}\n- Day Master: {dayMaster}\n- Day Master Strength: {strength}\n- Elemental Balance: {wuxing}\n- Energy Catalysts (Favorable): {favorable}\n- Elements to Observe (Unfavorable): {unfavorable}\n- Temporal Cycle (Liunian): {liunian}\n- Reference Classic: {fateBook}\n\n**Profile Structure (reference only, not advice):**\n1. **Energy Overview** (~150 words) — Detailed cultural view of the elemental composition and energy pattern. IMPORTANT: When referencing pillars, always use the format \"Year [X] / Month [X] / Day [X] / Hour [X]\" — do NOT mix Day and Hour pillar components.\n2. **In-Depth Elemental Analysis** — Detailed element strengths, deficiencies, Personal Energy Catalyst (elements that enhance your balance), and elements to observe\n3. **Elemental Relationship Reference** — Map how element configurations influence behavioral patterns, career direction, and relationships\n4. **Behavioral Tendencies & Potential** (5-7 points) — Energy-profile-based behavioral patterns and latent qualities\n5. **Career & Studies Reference** (2-3 items) — Directional reference from a classical rhythm perspective\n6. **Interpersonal & Emotional Reference** (2-3 items) — Heuristic directions for relationship reflection\n7. **Health & Life Rhythm Reference** (1-2 items) — Lifestyle balance suggestions from the elemental perspective\n8. **Temporal Cycle Energy Reference** — For each year in the cycle, analyze the Liunian pillar, its element, and key interactions (Clash/Harmony/Generate/Control) with the natal pillars. Provide specific energy themes and actionable guidance for each year — Interpretation of the current year's energy flow\n9. **Comprehensive Strategy** — H... (line truncated to 2000 chars)\n\n**Word Count Requirements:**\n- Keep the entire profile between **1000-1400 words**\n- Each section should be substantive but focused — no single section beyond 200 words\n- You MUST complete ALL 10 sections — do NOT truncate or cut short\n- End naturally after the final section with no extra content\n\n**Important Reminders:**\n- Use phrases like 'from an energy perspective', 'traditionally considered', 'as a reference point'\n- Avoid absolute predictions or specific event assertions\n- Emphasize user agency — these are environmental patterns, not fixed outcomes\n- Preserve the bilingual term annotations from the input data (e.g. 'Wood (木)', 'Jia (甲)') — always include both languages when referencing any term"
+      },
+      "maxTokens": 3000,
+      "temperature": 0.7,
+      "sections": [
+        "overview",
+        "wuxing",
+        "ten_gods",
+        "personality",
+        "career",
+        "relationships",
+        "health",
+        "annual",
+        "advice",
+        "spatial"
+      ]
+    }
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "$schema": "./schema/seo.schema.json",
+  "version": "0.7.0",
+  "site": {
+    "title": "Shui · Decode Your Personal Energy Cycle",
+    "titleAlt": "水 · 节律 · 解码你的个人能量周期",
+    "description": "Free AI-assisted personal energy cycle analysis. Discover your temporal energy vector, seasonal resonance, and spatial harmony strategies. For personal growth & mindfulness only.",
+    "descriptionAlt": "免费 AI 个人能量周期分析。发现你的时间能量向量、季节共振与空间调和策略。仅供个人成长与正念参考。",
+    "keywords": [
+      "Personal Energy Cycle",
+      "Temporal Energy Vector",
+      "Chronobiological Profile",
+      "Seasonal Resonance",
+      "Spatial Harmony Design",
+      "Five Elements Balance",
+      "Environmental Ergonomics",
+      "Mindful Living",
+      "个人能量周期",
+      "空间调和",
+      "五行平衡"
+    ],
+    "author": "Shui",
+    "ogImage": "/og-image.png"
+  },
+  "robots": {
+    "allowAll": true,
+    "disallowPaths": ["/admin", "/api"],
+    "sitemap": "/sitemap.xml"
+  },
+  "openGraph": {
+    "type": "website",
+    "siteName": "Shui",
+    "locale": "en_US",
+    "alternateLocale": "zh_CN"
+  }
+}

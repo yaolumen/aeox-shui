@@ -1,0 +1,64 @@
+{
+  "$schema": "./schema/general.schema.json",
+  "version": "0.7.0",
+  "brand": {
+    "name": "Shui",
+    "nameZh": "水 · 节律",
+    "tagline": "Decode Your Personal Energy Cycle",
+    "taglineZh": "解码你的个人能量周期",
+    "subTagline": {
+      "en": "Science-informed perspective · For personal growth & mindfulness only",
+      "zh-CN": "科学视角 · 仅供个人成长与正念参考"
+    },
+    "domain": "shui.aeox.uk",
+    "logo": "/logo.svg"
+  },
+  "theme": {
+    "primaryColor": "#6366f1",
+    "secondaryColor": "#8b5cf6",
+    "accentColor": "#f59e0b"
+  },
+  "i18n": {
+    "strategy": "bilingual-en-first",
+    "defaultLocale": "en",
+    "supportedLocales": ["en", "zh-CN"],
+    "localeLabels": {
+      "en": "EN",
+      "zh-CN": "中"
+    },
+    "fallbackLocale": "en",
+    "autoDetect": true,
+    "persistPreference": true
+  },
+  "contact": {
+    "email": "support@aeox.uk"
+  },
+  "legal": {
+    "privacyPolicyUrl": "/privacy",
+    "termsUrl": "/terms",
+    "disclaimer": {
+      "short": {
+        "zh-CN": "本站内容基于传统节律文化，仅供个人成长与正念参考，不构成任何决策建议。数据 24 小时自动清除。",
+        "en": "Science-informed insights for personal growth & mindfulness only. Not advice. Data auto-purged in 24h."
+      },
+      "long": {
+        "zh-CN": "本平台运用经典环境算法与传统节律哲学，提供个人成长、室内美学指导与正念参考。所有内容由 AI 生成，不构成医疗、投资、婚恋、职业、法律等任何领域的决策建议。我们实行零知识数据政策：您的出生信息仅在实时内存中用于计算，报告生成后 24 小时内自动清除。您的生命由自己的选择塑造。",
+        "en": "This platform utilizes classical environmental algorithms and temporal philosophy to offer personal growth, interior aesthetic guidance, and mindfulness insights. All content is AI-generated and does NOT constitute medical, investment, marital, career, legal, or any other form of decision-making advice. We enforce a strict Zero-Knowledge Data Policy: your birth details are held in temporary memory only to compute your analysis and are automatically purged within 24 hours. Your life is shaped by your own choices."
+      }
+    },
+    "affiliateDisclosure": {
+      "zh-CN": "本报告中的部分产品链接为联盟营销链接。如果您通过这些链接购买，我们可能获得小额佣金，不增加您的任何费用。我们仅推荐与您的空间能量建议一致的产品。",
+      "en": "Some of the product links provided in our reports and recommendations are affiliate links. If you purchase through these links, we may earn a small commission at no additional cost to you. We only recommend items that align with your spatial energy recommendations."
+    },
+    "dataLifecycle": {
+      "zh-CN": "隐私优先：您的出生信息仅在实时内存中用于计算能量图谱，报告生成后 24 小时内自动从服务器清除。请及时下载或保存您的报告。",
+      "en": "Privacy by Design: Your birth details are held in temporary server memory only to render your analysis and are automatically purged within 24 hours. We strongly recommend downloading or saving your report immediately after viewing."
+    }
+  },
+  "features": {
+    "auth": false,
+    "payment": false,
+    "multiCurrency": false,
+    "newsletter": false
+  }
+}

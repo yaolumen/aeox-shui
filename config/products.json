@@ -1,0 +1,115 @@
+{
+  "$schema": "./schema/products.schema.json",
+  "version": "0.7.0",
+  "categories": ["ebook", "course", "tool", "merch"],
+  "wuxing": {
+    "wood": {
+      "en": "Wood",
+      "zh-CN": "木",
+      "tags": ["growth", "creativity", "spring", "renewal", "career", "vitality"],
+      "keywords": ["green", "east", "morning", "forest", "garden", "learning", "study", "book", "reading"]
+    },
+    "fire": {
+      "en": "Fire",
+      "zh-CN": "火",
+      "tags": ["passion", "visibility", "summer", "expression", "leadership", "communication"],
+      "keywords": ["red", "south", "noon", "sun", "light", "speaking", "social", "marketing", "performance"]
+    },
+    "earth": {
+      "en": "Earth",
+      "zh-CN": "土",
+      "tags": ["stability", "grounding", "transitions", "trust", "patience", "nurturing"],
+      "keywords": ["yellow", "center", "afternoon", "mountain", "clay", "planning", "organization", "meditation", "mindfulness"]
+    },
+    "metal": {
+      "en": "Metal",
+      "zh-CN": "金",
+      "tags": ["discipline", "clarity", "autumn", "structure", "precision", "refinement"],
+      "keywords": ["white", "west", "evening", "metal", "tools", "knife", "writing", "logic", "analysis", "productivity"]
+    },
+    "water": {
+      "en": "Water",
+      "zh-CN": "水",
+      "tags": ["wisdom", "intuition", "winter", "flow", "adaptability", "depth"],
+      "keywords": ["blue", "north", "night", "ocean", "river", "rest", "sleep", "philosophy", "meditation", "creativity"]
+    }
+  },
+  "samples": [
+    {
+      "id": "ebook-energy-defense",
+      "title": {
+        "en": "The Energy Defense Guide: Navigating Low Phases with Spatial Alignment",
+        "zh-CN": "能量防御指南：如何利用空间布局度过低谷期"
+      },
+      "category": "ebook",
+      "url": "https://example.com/ebook/energy-defense",
+      "price": "USD 9.99",
+      "tags": ["mindfulness", "water", "earth", "spatial-harmony", "low-energy"],
+      "wuxing": ["water", "earth"],
+      "locale": ["en", "zh-CN"],
+      "featured": true,
+      "active": true,
+      "description": {
+        "en": "A practical guide to recognizing your low-energy phases and creating stabilizing spatial arrangements. Uses classical environmental algorithms to help you build a protective home sanctuary.",
+        "zh-CN": "识别你的低能量期并创建稳定空间布局的实用指南。运用经典环境算法帮助你打造防护型居家避风港。"
+      }
+    },
+    {
+      "id": "ebook-quantum-space",
+      "title": {
+        "en": "Quantum Space: Harmonizing Your Home with Classical Energy Principles",
+        "zh-CN": "量子空间：用经典能量原理调和你的家"
+      },
+      "category": "ebook",
+      "url": "https://example.com/ebook/quantum-space",
+      "price": "USD 14.99",
+      "tags": ["spatial-harmony", "wood", "fire", "interior-design", "mindful-living"],
+      "wuxing": ["wood", "fire"],
+      "locale": ["en", "zh-CN"],
+      "featured": true,
+      "active": true,
+      "description": {
+        "en": "Explore how classical Five Element principles can inform modern interior design. Learn to create rooms that support your personal energy catalyst through color, texture, and spatial arrangement.",
+        "zh-CN": "探索经典五行原则如何指导现代室内设计。学习通过色彩、材质与空间布局创建支持个人能量催化剂的房间。"
+      }
+    },
+    {
+      "id": "tool-journal",
+      "title": {
+        "en": "Energy Rhythm Journal — Five Elements Edition",
+        "zh-CN": "能量节律日记本 · 五行版"
+      },
+      "category": "tool",
+      "url": "https://example.com/product/energy-journal",
+      "price": "USD 14.99",
+      "tags": ["mindfulness", "water", "earth", "writing", "self-reflection"],
+      "wuxing": ["water", "earth"],
+      "locale": ["en", "zh-CN"],
+      "featured": false,
+      "active": true,
+      "description": {
+        "en": "A guided journal for daily energy reflection, organized by the Five Elemental Balance System. Track your personal rhythm cycles and identify seasonal patterns.",
+        "zh-CN": "按五行平衡系统组织的每日能量反思日记本。追踪你的个人节律周期，识别季节性模式。"
+      }
+    },
+    {
+      "id": "course-chrono-rhythms",
+      "title": {
+        "en": "Chronobiological Rhythms: A Modern Guide to Seasonal Energy Mapping",
+        "zh-CN": "时间生物节律：季节能量图谱的现代指南"
+      },
+      "category": "course",
+      "url": "https://example.com/course/chrono-rhythms",
+      "price": "USD 49.00",
+      "tags": ["history", "culture", "metal", "water", "learning", "seasonal-resonance"],
+      "wuxing": ["metal", "water"],
+      "locale": ["en", "zh-CN"],
+      "featured": false,
+      "active": true,
+      "description": {
+        "en": "A 6-hour course covering how ancient environmental systems mapped human physiology to seasonal and temporal changes — translated into modern energy cycle metrics and actionable lifestyle strategies.",
+        "zh-CN": "6 小时课程，涵盖古代环境系统如何将人类生理映射到季节与时间变化——转化为现代能量周期指标与可执行的生活策略。"
+      }
+    }
+  ]
+}
